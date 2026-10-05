@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "predictions_unchanged": 26,
+    "source_py_unchanged": 10,
+    "notebook_bundled_files_match_archive": 16,
+    "eval_py_unchanged": true,
+    "xlsx_sheets_and_cells_match_evidence": 7,
+    "training_curves": 20,
+    "local_links_exist": true,
+    "source_selftest": {
+      "passed": 12,
+      "failed": 0
+    },
+    "posthoc_calibration_csvs": 6,
+    "posthoc_argmax_preserved": true,
+    "full_network_overfit_passed": true
+  },
+  "input_archive_sha256": "dea6aeee1ef2efb46b022bcfceb2e7326050b0a6d052bad2dbea71444e1da4ea",
+  "phase": "delivery verification; no test forward"
+}

@@ -1,0 +1,44 @@
+{
+  "phase": "post-hoc calibration; original F01 unmodified; not selected before original test",
+  "method": "F01 hflip_logit; softmax(log(saved probability)/T)",
+  "fit_method": "original inference.fit_temperature, NLL log-grid + golden section",
+  "protocol": "all three T fitted on val and written before reading test CSV in this script",
+  "date": "2026-10-05",
+  "temperatures": [
+    {
+      "seed": 0,
+      "T": 0.6345292627811346,
+      "fit_split": "val",
+      "objective": "NLL",
+      "val_source": "predictions\\F01_seed0_val.csv",
+      "val_sha256": "90ab4da7e83f7acca3e7ed799ad42a916e69322c273bedf0c431171943322530",
+      "val_zero_probabilities": 0,
+      "val_samples": 3501
+    },
+    {
+      "seed": 1,
+      "T": 0.6332262456416998,
+      "fit_split": "val",
+      "objective": "NLL",
+      "val_source": "predictions\\F01_seed1_val.csv",
+      "val_sha256": "3a1d780d3f4aeba998f4e01a198a2ccbc5b729f2a6b9bf4da004cf023613a57c",
+      "val_zero_probabilities": 0,
+      "val_samples": 3501
+    },
+    {
+      "seed": 2,
+      "T": 0.6329183280467882,
+      "fit_split": "val",
+      "objective": "NLL",
+      "val_source": "predictions\\F01_seed2_val.csv",
+      "val_sha256": "9ca612e83e20a34537df6e73ac050c0c610760697692ecf636b27b07dcf29243",
+      "val_zero_probabilities": 0,
+      "val_samples": 3501
+    }
+  ],
+  "local_versions": {
+    "python": "3.14.5",
+    "torch": "2.12.0+cu126",
+    "timm": "1.0.30"
+  }
+}

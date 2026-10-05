@@ -1,0 +1,120 @@
+{
+  "scope": "local workspace",
+  "images_dir": "C:\\Users\\ADMIN\\AI20K\\LABT4-2\\K4-Track4-Day2-PhamVanKien-2A202602590-Deeplearning-Advance\\images",
+  "labels_dir": "C:\\Users\\ADMIN\\AI20K\\LABT4-2\\K4-Track4-Day2-PhamVanKien-2A202602590-Deeplearning-Advance\\data\\labels",
+  "csv_rows": {
+    "labels": 17509,
+    "train_subset0": 10501,
+    "val_subset0": 3501,
+    "test_subset0": 3507
+  },
+  "csv_duplicates": {
+    "labels": 0,
+    "train_subset0": 0,
+    "val_subset0": 0,
+    "test_subset0": 0
+  },
+  "class_counts": {
+    "labels": [
+      1125,
+      1064,
+      1031,
+      1022,
+      1062,
+      1009,
+      1074,
+      1016,
+      9106
+    ],
+    "train_subset0": [
+      675,
+      637,
+      618,
+      613,
+      637,
+      605,
+      644,
+      609,
+      5463
+    ],
+    "val_subset0": [
+      225,
+      213,
+      206,
+      204,
+      212,
+      202,
+      215,
+      203,
+      1821
+    ],
+    "test_subset0": [
+      226,
+      213,
+      207,
+      205,
+      213,
+      202,
+      215,
+      204,
+      1822
+    ]
+  },
+  "class_names": {
+    "0": "Chinee apple",
+    "1": "Lantana",
+    "8": "Negative",
+    "7": "Snake weed",
+    "6": "Siam weed",
+    "4": "Prickly acacia",
+    "3": "Parthenium",
+    "5": "Rubber vine",
+    "2": "Parkinsonia"
+  },
+  "overlaps": {
+    "train_subset0__val_subset0": 0,
+    "train_subset0__test_subset0": 0,
+    "val_subset0__test_subset0": 0
+  },
+  "union_count": 17509,
+  "union_missing_from_master": [],
+  "union_extra_vs_master": [],
+  "label_mismatches": {
+    "train_subset0": [
+      "20170714-110407-3.jpg"
+    ],
+    "val_subset0": [],
+    "test_subset0": []
+  },
+  "image_count": 17509,
+  "duplicate_image_names": [],
+  "missing_images": [],
+  "unlisted_images": [],
+  "extension_counts": {
+    ".jpg": 17509
+  },
+  "image_bytes": 492066868,
+  "image_sizes": {
+    "256x256": 17509
+  },
+  "image_modes": {
+    "RGB": 17509
+  },
+  "corrupt_images": [],
+  "decode_seconds": 39.1,
+  "archive_md5": "b7b30f96d466fba86016aa5a26606e0f",
+  "archive_md5_matches_readme": true,
+  "label_discrepancy_details": [
+    {
+      "Filename": "20170714-110407-3.jpg",
+      "labels.csv": {
+        "Label": 1,
+        "Species": "Lantana"
+      },
+      "train_subset0.csv": {
+        "Label": 0,
+        "Species": "Chinee apple"
+      }
+    }
+  ]
+}

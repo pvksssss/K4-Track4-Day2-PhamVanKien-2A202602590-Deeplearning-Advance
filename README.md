@@ -1,5 +1,15 @@
 # Lab Day 2 — Backbone, công thức huấn luyện và suy luận trên DeepWeeds
 
+## Bài làm của Phạm Văn Kiên — 2A202602590
+
+Bài nộp hoàn thiện nằm tại [`submissions/2A202602590_PhamVanKien/`](submissions/2A202602590_PhamVanKien/): [báo cáo](submissions/2A202602590_PhamVanKien/report.md), [Excel kết quả](submissions/2A202602590_PhamVanKien/results.xlsx), code, dự đoán và bằng chứng thực nghiệm. Notebook Kaggle: [track4-d2](https://www.kaggle.com/code/b22dckh063phmvnkin/track4-d2).
+
+Final gốc qua ba seed đạt accuracy 98,03%, macro-F1 0,97528 ± 0,00094. Phân tích hiệu chuẩn bổ sung giảm ECE từ 0,08477 xuống 0,00571, giữ nguyên nhãn dự đoán. Báo cáo phân biệt rõ các kiểm tra bổ sung sau thực nghiệm; mục I tự chấm phần bổ sung 19/20, giảng viên xác nhận tính hợp lệ.
+
+Để chạy từ đầu chỉ cần upload [`code/lab_day2_kaggle_full.ipynb`](code/lab_day2_kaggle_full.ipynb) và gắn dataset vào Kaggle Input. Xem [hướng dẫn chạy](code/README.md). Dataset, checkpoint lớn và ZIP không được đưa vào Git. Các tài liệu đề bài bên dưới được giữ để đối chiếu.
+
+---
+
 > Track 4 · Ngày 2 · *Tích chập, chuỗi, attention · backbone · huấn luyện · suy luận*
 > Bài lab này mở rộng **Lab #2** trong slide Day 2. Slide chỉ yêu cầu 1 backbone, 3 cách khởi tạo, có/không CutMix và TTA. Ở đây bạn làm đầy đủ: **≥ 5 backbone**, **nhiều công thức huấn luyện**, **nhiều cách suy luận**, rồi chọn cấu hình tốt nhất và báo cáo.
 

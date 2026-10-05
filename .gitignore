@@ -10,5 +10,6 @@ images/
 checkpoints/
 __pycache__/
 .ipynb_checkpoints/
-runs/
-eval_out/
+/runs/
+/eval_out/
+*.inspect.ndjson

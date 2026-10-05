@@ -1,0 +1,31 @@
+{
+  "exp_id": "I01",
+  "source_exp_id": "T09",
+  "seed": 0,
+  "backbone": "swin_tiny",
+  "method": "hflip_prob",
+  "k_views": 2,
+  "temperature": 1.0,
+  "val_macro_f1": 0.9747106848023902,
+  "val_top1": 0.9811482433590403,
+  "val_ece": 0.08252674868977841,
+  "checkpoint": "/kaggle/working/deepweeds-lab/runs/T09/seed0/best.pt",
+  "latency": {
+    "p50": 20.45876600095653,
+    "p95": 22.000357799515765,
+    "p99": 23.136395561014066,
+    "mean": 20.55352256022161,
+    "min": 19.496016000630334,
+    "max": 23.812622999685118,
+    "n": 50,
+    "warmup": 10,
+    "gpu": "Tesla T4",
+    "dtype": "fp32",
+    "batch": 1,
+    "img_size": 224,
+    "images_per_s": 48.87880334294092,
+    "includes_preprocess": true,
+    "timing_scope": "tensor views + forward + aggregation; excludes image decoding"
+  },
+  "relative_cost": 2.0785208088595106
+}

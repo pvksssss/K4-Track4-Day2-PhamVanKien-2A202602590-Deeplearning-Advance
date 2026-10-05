@@ -1,0 +1,13 @@
+# Install the GPU-compatible torch/torchvision pair for your environment first.
+numpy
+pandas
+Pillow
+torch
+torchvision
+timm
+matplotlib
+scikit-learn
+openpyxl
+nbformat
+nbclient
+ipykernel

@@ -1,0 +1,166 @@
+{
+  "source": "results.zip",
+  "audit_type": "read-only retrospective review; no training or test forwards performed",
+  "eval_py_unchanged": true,
+  "ablations": [
+    {
+      "exp_id": "T00",
+      "changed_fields": {},
+      "val_macro_f1": 0.9690619133186019,
+      "delta_vs_T00": 0.0
+    },
+    {
+      "exp_id": "T01",
+      "changed_fields": {
+        "init": "scratch"
+      },
+      "val_macro_f1": 0.745840188613505,
+      "delta_vs_T00": -0.22322172470509694
+    },
+    {
+      "exp_id": "T02",
+      "changed_fields": {
+        "init": "frozen"
+      },
+      "val_macro_f1": 0.8372143866504064,
+      "delta_vs_T00": -0.13184752666819555
+    },
+    {
+      "exp_id": "T03",
+      "changed_fields": {
+        "aug": "trivial"
+      },
+      "val_macro_f1": 0.9593931328506495,
+      "delta_vs_T00": -0.009668780467952387
+    },
+    {
+      "exp_id": "T04",
+      "changed_fields": {
+        "aug": "color"
+      },
+      "val_macro_f1": 0.9669955356178256,
+      "delta_vs_T00": -0.002066377700776334
+    },
+    {
+      "exp_id": "T05",
+      "changed_fields": {
+        "loss": "ls",
+        "label_smoothing": 0.1
+      },
+      "val_macro_f1": 0.9719609137201322,
+      "delta_vs_T00": 0.0028990004015302384
+    },
+    {
+      "exp_id": "T06",
+      "changed_fields": {
+        "loss": "focal"
+      },
+      "val_macro_f1": 0.9681126470932527,
+      "delta_vs_T00": -0.0009492662253491879
+    },
+    {
+      "exp_id": "T07",
+      "changed_fields": {
+        "mix": "cutmix"
+      },
+      "val_macro_f1": 0.9714978193992003,
+      "delta_vs_T00": 0.0024359060805984045
+    },
+    {
+      "exp_id": "T08",
+      "changed_fields": {
+        "mix": "mixup"
+      },
+      "val_macro_f1": 0.9703125198195072,
+      "delta_vs_T00": 0.0012506065009052492
+    },
+    {
+      "exp_id": "T09",
+      "changed_fields": {
+        "mix": "cutmix",
+        "loss": "ls",
+        "label_smoothing": 0.1
+      },
+      "val_macro_f1": 0.9732106914001558,
+      "delta_vs_T00": 0.004148778081553894
+    }
+  ],
+  "verified_final_metrics": {
+    "T00": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "rows_per_test_seed": 3507,
+      "test_identity_and_labels_match_local_csv": true,
+      "test": {
+        "top1": {
+          "mean": 0.9756677121946583,
+          "std": 0.001940935068592548
+        },
+        "macro_f1": {
+          "mean": 0.9683212653229135,
+          "std": 0.003418662526047092
+        },
+        "ece": {
+          "mean": 0.018128968023952127,
+          "std": 0.0015453527150664198
+        }
+      },
+      "val_macro_f1_mean": 0.9701300540496701,
+      "val_macro_f1_std": 0.0016288318658945655
+    },
+    "F01": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "rows_per_test_seed": 3507,
+      "test_identity_and_labels_match_local_csv": true,
+      "test": {
+        "top1": {
+          "mean": 0.9803250641573995,
+          "std": 0.0008554319931565191
+        },
+        "macro_f1": {
+          "mean": 0.9752786737837313,
+          "std": 0.0009422757214067316
+        },
+        "ece": {
+          "mean": 0.0847715578794791,
+          "std": 0.0019152959859990433
+        }
+      },
+      "val_macro_f1_mean": 0.9753257291910581,
+      "val_macro_f1_std": 0.0009236041712145723
+    }
+  },
+  "limitations": [
+    "B01-B05 use same fold, seed, recipe and training budget; pretraining provenance differs, particularly ConvNeXt in12k_ft_in1k. Architecture alone is not isolated.",
+    "All screening comparisons use seed0 only. Small ablation gains are descriptive, not proven significant; final T00/F01 each have 3 seeds.",
+    "No archived initial-loss ln9, one-batch overfit, or augmented-image sanity check execution evidence. Source selftest availability does not establish execution before training.",
+    "No archived backbone-specific latency benchmarks and no batch>1 throughput measurement. Batch1 images_per_s is derived from p50.",
+    "Latency valid warmup10, 50 iterations and CUDA synchronize; Tesla T4 FP32 batch1. Scope tensor views + forward + aggregation, excluding decoding, normal resize/normalize, host transfers and other end-to-end costs.",
+    "T09 seed0 I03 latency p95 21.9673926498 ms is reference evidence for same architecture/recipe/method; final F01 checkpoints were not directly benchmarked.",
+    "Calibration I04 fits T=.6380212009 on T09 single-view validation, reducing ECE .0833022909 to .0058967343. Final method hflip_logit has T=1 and no calibrated final test comparison; cannot claim I4a achieved.",
+    "F01 summary validation metrics represent final hflip inference while training histories and curves represent single-view evaluation. Explain difference explicitly.",
+    "Test-once procedure is supported by selection.json val lock and guarded workflow recovery code, but archive alone cannot independently prove no prior manual test access.",
+    "Only fold0 and random predefined image split; no location-stratified external validation, multi-fold or domain shift study.",
+    "GMAC counter uses Conv2d+Linear hooks and omits transformer attention matrix multiplies; reported values are approximate incomplete MAC estimates."
+  ],
+  "curve_completeness": {
+    "training_runs": 20,
+    "history_csv": 20,
+    "training_png": 20,
+    "epochs_per_run": 12
+  },
+  "requirements_remaining_before_submission": [
+    "report with figures/error analysis and explicit limits",
+    "submission README with actual notebook rerun link supplied by user; do not fabricate",
+    "complete workbook required headings/units and absent measurement markings",
+    "include all provenance logs/configs and prediction CSVs",
+    "optional post hoc sanity tests clearly labelled, no invented pretraining checks"
+  ]
+}
